@@ -45,6 +45,13 @@
 
     const button = document.getElementById('challengeButton');
     const resultText = document.getElementById('result');
+    const funFactText = document.getElementById('funFact');
+    const funFacts = [
+          'Fun Fact: Did you know... [Fun Fact 1]?',
+          'Fun Fact: Did you know... [Fun Fact 2]?',
+          'Fun Fact: Did you know... [Fun Fact 3]?'
+          // Add more fun facts as needed
+        ];
 
     button.addEventListener('click', () => {
       if (!startTime) {
@@ -63,12 +70,12 @@
       setTimeout(() => {
         const endTime = new Date().getTime();
         const elapsedTime = (endTime - startTime) / 1000; // in seconds
-        const pressesPerMinute = (count / elapsedTime) * 60;
+        const pressesPerSecond = (count / elapsedTime);
 
         resultText.innerHTML = `
           <p>Challenge completed!</p>
-          <p>You pressed the button ${count} times in ${elapsedTime.toFixed(2)} seconds.</p>
-          <p>Presses per minute: ${pressesPerMinute.toFixed(2)}</p>
+          <p>You pressed the button ${count} times in 60 seconds.</p>
+          <p>Average presses per second: ${pressesPerSecond.toFixed(2)}</p>
         `;
 
         startTime = null;
