@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Button Challenge</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #button-container {
+      text-align: center;
+    }
+
+    #result-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #result-container p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="button-container">
+      <button id="challengeButton" class="btn btn-primary btn-lg">Press Me!</button>
+    </div>
+    <div id="result-container">
+      <p id="result">Press the button to start the challenge!</p>
+    </div>
+  </div>
+
+  <script>
+    let startTime;
+    let count = 0;
+
+    const button = document.getElementById('challengeButton');
+    const resultText = document.getElementById('result');
+
+    button.addEventListener('click', () => {
+      if (!startTime) {
+        startTime = new Date().getTime();
+        count = 0;
+        resultText.textContent = 'Challenge in progress...';
+        button.textContent = 'Press Me!';
+        startCountdown();
+      } else {
+        count++;
+        button.textContent = `Pressed ${count} times`;
+      }
+    });
+
+    function startCountdown() {
+      setTimeout(() => {
+        const endTime = new Date().getTime();
+        const elapsedTime = (endTime - startTime) / 1000; // in seconds
+        const pressesPerMinute = (count / elapsedTime) * 60;
+
+        resultText.innerHTML = `
+          <p>Challenge completed!</p>
+          <p>You pressed the button ${count} times in ${elapsedTime.toFixed(2)} seconds.</p>
+          <p>Presses per minute: ${pressesPerMinute.toFixed(2)}</p>
+        `;
+
+        startTime = null;
+      }, 60000); // 1 minute
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
