@@ -124,10 +124,10 @@ function addImage(imgPath) {
 
 function getRandomXCoordinate() {
    // Returns a random coordinate value (within the screen width)
-   return Math.floor(Math.random() * screen.width);
+   return (Math.floor(Math.random() * (screen.width - 200)));
 }
 
 function getRandomYCoordinate() {
    // Returns a random coordinate value (within the screen width)
-   return Math.floor(Math.random() * (screen.height - 20));
+   return (Math.floor(Math.random() * (screen.height - 200)));
 }
