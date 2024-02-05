@@ -16,63 +16,60 @@ button.addEventListener('click', () => {
             document.body.style.backgroundImage = "url('logs.jpg')";
             break;
          case 3:
-            button.style.backgroundImage = "url('feats-of-strength.jpg')";
-            break;
-         case 4:
             addAudioElement();
             break;
-         case 5:
+         case 4:
             addImage('feat0.png');
+            break;
+         case 5:
+            addImage('feat1.png');
             break;
          case 6:
-            addImage('feat1.png');
+            addImage('feat2.png');
             break;
          case 7:
-            addImage('feat2.png');
+            addImage('feat0.png');
             break;
          case 8:
-            addImage('feat0.png');
+            addImage('feat1.png');
             break;
          case 9:
-            addImage('feat1.png');
+            addImage('feat2.png');
             break;
          case 10:
-            addImage('feat2.png');
+            addImage('feat0.png');
             break;
          case 11:
-            addImage('feat0.png');
+            addImage('feat1.png');
             break;
          case 12:
-            addImage('feat1.png');
+            addImage('feat2.png');
             break;
          case 13:
-            addImage('feat2.png');
+            addImage('feat0.png');
             break;
          case 14:
-            addImage('feat0.png');
+            addImage('feat1.png');
             break;
          case 15:
-            addImage('feat1.png');
+            addImage('feat2.png');
             break;
          case 16:
-            addImage('feat2.png');
+            addImage('feat0.png');
             break;
          case 17:
-            addImage('feat0.png');
+            addImage('feat1.png');
             break;
          case 18:
-            addImage('feat1.png');
-            break;
-         case 19:
             addImage('feat2.png');
             break;
-         case 20:
+         case 19:
             addImage('feat0.png');
             break;
-         case 21:
+         case 20:
             addImage('feat1.png');
             break;
-         case 22:
+         case 21:
             addImage('feat2.png');
             break;
       } 
@@ -127,10 +124,10 @@ function addImage(imgPath) {
 
 function getRandomXCoordinate() {
    // Returns a random coordinate value (within the screen width)
-   return Math.floor(Math.random() * window.innerWidth);
+   return Math.floor(Math.random() * screen.width);
 }
 
 function getRandomYCoordinate() {
    // Returns a random coordinate value (within the screen width)
-   return Math.floor(Math.random() * window.innerHeight);
+   return Math.floor(Math.random() * screen.height);
 }
