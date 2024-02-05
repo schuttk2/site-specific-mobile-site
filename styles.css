@@ -21,8 +21,6 @@ body {
    color: white;
    letter-spacing: 2px;
    font-weight: bold;
-   -webkit-text-stroke-width: 1.5px;
-   -webkit-text-stroke-color: black;
  }
 
  #challengeButton {

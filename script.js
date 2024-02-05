@@ -129,5 +129,5 @@ function getRandomXCoordinate() {
 
 function getRandomYCoordinate() {
    // Returns a random coordinate value (within the screen width)
-   return Math.floor(Math.random() * screen.height);
+   return Math.floor(Math.random() * (screen.height - 20));
 }
