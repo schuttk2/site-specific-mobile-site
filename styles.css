@@ -5,6 +5,7 @@ body {
    height: 100vh;
    margin: 0;
    background-size: cover;
+   background-color: black;
    background-position: center;
  }
  
